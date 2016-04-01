@@ -1,0 +1,49 @@
+#add car remote irc key
+
+begin
+	button = KEY_UP
+	prog = carremote
+	config = KEY_UP
+end
+
+begin
+	button = KEY_DOWN
+	prog = carremote
+	config = KEY_DOWN
+end
+
+begin
+	button = KEY_GOTO
+	prog = carremote
+	config = KEY_GOTO
+end
+
+begin
+	button = KEY_BACK
+	prog = carremote
+	config = KEY_BACK
+end
+
+begin
+	button = KEY_START
+	prog = carremote
+	config = KEY_START
+end
+
+begin
+	button = KEY_STOP
+	prog = carremote
+	config = KEY_STOP
+end
+
+begin
+	button = KEY_LEFT
+	prog = carremote
+	config = KEY_LEFT
+end
+
+begin
+	button = KEY_RIGHT
+	prog = carremote
+	config = KEY_RIGHT
+end
