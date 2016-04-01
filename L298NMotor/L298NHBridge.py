@@ -19,18 +19,18 @@ import time
 
 class HBridge(object):
 
-    def __init__(self):
+    def __init__(self, left_pin1, left_pin2, right_pin1, right_pin2, leftpwm_pin, rightpwm_pin):
         io.setmode(io.BCM)
         # Constant values
         self.PWM_MAX = 100
         # Here we configure the GPIO settings for the left and right motors spinning direction. 
         # It defines the four GPIO pins used as input on the L298 H-Bridge to set the motor mode (forward, reverse and stopp).
-        self.leftmotor_in1_pin = 27
-        self.leftmotor_in2_pin = 22
-        self.rightmotor_in1_pin = 23
-        self.rightmotor_in2_pin = 24
-        self.leftmotorpwm_pin = 19
-        self.rightmotorpwm_pin = 26
+        self.leftmotor_in1_pin = left_pin1
+        self.leftmotor_in2_pin = left_pin2
+        self.rightmotor_in1_pin = right_pin1
+        self.rightmotor_in2_pin = right_pin2
+        self.leftmotorpwm_pin = leftpwm_pin
+        self.rightmotorpwm_pin = rightpwm_pin
         self.SetupGPIO()
         self.leftmotorpwm = io.PWM(self.leftmotorpwm_pin,100)
         self.rightmotorpwm = io.PWM(self.rightmotorpwm_pin,100)

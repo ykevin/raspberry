@@ -9,7 +9,7 @@ from L298NHBridge import HBridge
 speedleft = 0
 speedright = 0
 
-Motors = HBridge()
+Motors = HBridge(27, 22, 23, 24, 19, 26)
 # Instructions for when the user has an interface
 print("w/s: direction")
 print("a/d: steering")
