@@ -9,11 +9,8 @@
 
 import lirc
 import time
-from L298NHBridge import HBridge
 
 def LircDecode():
-    print "++++++Start run programe++++"
-    Motors = HBridge(27, 22, 23, 24, 19, 26)
     try :
         while True:
             codeIR = lirc.nextcode()
@@ -24,12 +21,8 @@ def LircDecode():
                     print 'The car speed sub 0.1'
                 elif codeIR[0] == "KEY_STOP":
                     print 'The car stop move'
-                    Motors.setMotorLeft(0)
-                    Motors.setMotorRight(0)
                 elif codeIR[0] == "KEY_START":
                     print 'The car start move '
-                    Motors.setMotorLeft(1)
-                    Motors.setMotorRight(1)
                 elif codeIR[0] == "KEY_GOTO":
                     print 'The car forward'
                 elif codeIR[0] == "KEY_BACK":
@@ -42,5 +35,5 @@ def LircDecode():
         Motors.exit()
 
 if __name__ == "__main__":
-    sockid=lirc.init("carremote", blocking = False)
+    sockid=lirc.init("carremote", blocking = True)
     LircDecode()
